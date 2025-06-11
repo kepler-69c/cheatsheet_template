@@ -1,0 +1,58 @@
+%% style/preamble.tex %%
+
+% encoding and core math
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,mathtools}
+
+% tables, colors, graphics, listings
+\usepackage{graphicx,overpic}
+\usepackage{color,xcolor}
+\usepackage{multicol,multirow}
+\usepackage{enumitem}
+\usepackage{minted}
+\usepackage{csquotes}
+\usepackage{supertabular}
+\usepackage{xltabular}
+\usepackage{makecell}
+\usepackage{mdframed}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{mathrsfs}
+
+% spacing and logic
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{geometry}
+\geometry{top=1.2cm, left=1cm, right=1cm, bottom=0.8cm, headsep=10pt}
+
+% hyperlinks
+\usepackage{hyperref}
+
+% math operators
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\E}{\mathrm{E}}
+\DeclareMathOperator*{\Var}{\mathrm{Var}}
+\DeclareMathOperator*{\w}{\mathbf{w}}
+\DeclareMathOperator*{\W}{\mathbf{W}}
+\DeclareMathOperator*{\x}{\mathbf{x}}
+\DeclareMathOperator*{\X}{\mathbf{X}}
+\DeclareMathOperator*{\y}{\mathbf{y}}
+\DeclareMathOperator*{\z}{\mathbf{z}}
+\DeclareMathOperator*{\vv}{\mathbf{v}}
+
+\newcommand{\eqqcolon}{\mathrel{\rotatebox[units=360]{180}{\ensuremath{\coloneqq}}}}
+
+% theorems
+\newtheorem{example}[section]{Example}
+
+% document spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+% no section numbering
+\setcounter{secnumdepth}{0}

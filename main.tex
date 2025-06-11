@@ -1,0 +1,24 @@
+%% main.tex %%
+\documentclass[9pt,landscape,a4paper,table]{extarticle}
+
+\def\subject{subject}
+\def\semester{semester}
+\def\author{author}
+\def\cols{3}
+
+\input{style/preamble}
+\input{style/layout}
+
+\begin{document}
+	
+	\raggedright
+	\raggedcolumns
+	\footnotesize
+	
+	\begin{multicols*}{\cols}
+		
+		\input{content/content}
+		
+	\end{multicols*}
+	
+\end{document}
