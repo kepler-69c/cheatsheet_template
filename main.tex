@@ -1,10 +1,12 @@
 %% main.tex %%
 \documentclass[9pt,landscape,a4paper,table]{extarticle}
+\newif\ifcompactmode
 
 \def\subject{subject}
 \def\semester{semester}
-\def\author{author}
-\def\cols{3}
+\def\author{author}		% keep empty to hide
+\def\cols{3}			% number of columns
+\compactmodefalse		% toggle compact mode with \compactmodetrue
 
 \input{style/preamble}
 \input{style/layout}

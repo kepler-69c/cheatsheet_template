@@ -1,10 +1,17 @@
 %% style/layout.tex %%
 
-#TODO: add option to disable
-% remove itemize/enumerate margin, make vertical space shorter
-% \setlist[itemize]{left=0pt, labelsep=0.5em}
-\setlist[enumerate]{leftmargin=*, itemsep=0em} % 0pt is also possible
-\setlist[itemize]{leftmargin=*, itemsep=0em}
+% compact mode: remove itemize/enumerate margin, make vertical space shorter
+\ifcompactmode
+    % compact settings
+    \setlength{\jot}{1pt}
+    \setlist[enumerate]{leftmargin=*, itemsep=0em} % 0pt is also possible
+    \setlist[itemize]{leftmargin=*, itemsep=0em}
+\else
+    % normal settings
+%     \setlength{\jot}{3pt}
+%     \setlist[enumerate]{leftmargin=*, itemsep=0.5em}
+%     \setlist[itemize]{leftmargin=*, itemsep=0.5em}
+\fi
 
 % fonts
 \usepackage[sfdefault]{FiraSans}
@@ -38,8 +45,17 @@
 \usepackage{lastpage}
 \pagestyle{fancy}
 \fancyhf{}
-#TODO: don't print author if empty
-\lhead{\textbf{\subject} - \semester - \textbf{\author}}
+% we're not printing the author if empty
+\lhead{%
+  \textbf{\subject} - \semester%
+  \ifx\author\empty
+  % do nothing
+  \else
+    - \textbf{\author}%
+  \fi
+}
+
+% \lhead{\textbf{\subject} - \semester - \textbf{\author}}
 \rhead{page \thepage /\pageref*{LastPage}}
 
 % for colors:

@@ -1,10 +1,9 @@
 %% style/preamble.tex %%
 
 % encoding and core math
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-#TODO: is lmodern needed?
-\usepackage{lmodern}
+\usepackage[utf8]{inputenc} % utf-8 input
+\usepackage[T1]{fontenc} % better output font encoding
+\usepackage{lmodern} % scalable Latin Modern font
 
 \usepackage{mathtools} % loads amsmath too
 \usepackage{amsthm}
@@ -12,8 +11,7 @@
 \usepackage{amssymb} % For common math symbols
 
 % tables, colors, graphics, listings
-# TODO: is booktabs really needed?
-\usepackage{booktabs} % For better looking tables (e.g., \toprule, \midrule, \bottomrule)
+\usepackage{booktabs} % to use e.g., \toprule, \midrule, \bottomrule in tables
 \usepackage{graphicx,overpic}
 \usepackage[dvipsnames]{color,xcolor}
 \usepackage{multicol,multirow}
@@ -33,11 +31,9 @@
 \usepackage{ifthen}
 \usepackage{geometry}
 \geometry{top=1.2cm, left=1cm, right=1cm, bottom=0.8cm, headsep=10pt}
-#TODO: what is this doing?
-\setlength{\jot}{1pt}
 
 % boxes
-#TODO: why only here? Why comment out in the other file?
+% #TODO: why only here? Why comment out in the other file?
 \usepackage[most]{tcolorbox}
 
 % hyperlinks
