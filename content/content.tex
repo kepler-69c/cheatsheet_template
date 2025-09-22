@@ -1,3 +1,73 @@
 %% content/content.tex %%
 
-\subsection{content}
+\section{Section}
+\subsection{subsection}
+\subsubsection{subsubsection}
+
+There is some text on this page. The text can be \textbf{bold (\textbackslash textbf)}, \textit{italic (\textbackslash textit)}, and even \underline{underlined (\textbackslash underline)}.
+
+There are also some additional styles, e.g. \hl{highlighted (\textbackslash hl)} using the soul package. You can write monospace text using \texttt{monospace (\textbackslash texttt)}. Add footnotes \footnote{This is a footnote example} using \textbackslash footnote, although I can't imagine why you would use footnotes in a cheatsheet.
+
+You can include lists:
+\begin{itemize}
+    \item first item
+    \item second item
+    \item third item
+\end{itemize}
+
+or numbered lists:
+\begin{enumerate}
+    \item first numbered item
+    \item second numbered item
+    \item third numbered item
+\end{enumerate}
+
+Mathematical expressions can be inline $E=mc^2$ or displayed:
+$$
+\int_0^\infty e^{-x} dx = 1
+$$
+
+You can also include figures and tables. You won't find examples for those environments in this file, because I'm too lazy. However, I'll show you some other environments that I've configured for this cheatsheet template.
+
+\subsubsection{custom environments}
+Sometimes, there is something really important that should immediately stand out on a page, e.g.
+
+\warning{this theorem.}
+
+For this, use the \texttt{\textbackslash warning\{\}} environment.
+
+You might also want to write a standard solution for common exercises, which can always be solved in the same way. That is what the \texttt{recipe} environment is for:
+
+\begin{recipe}[Recipe for PDEs]
+\begin{enumerate}
+  \item define the domain and boundary conditions of the PDE
+  \item mix the domain, flour, margarine, and milk into a smooth dough
+  \item apply a Fourier transform to the dough
+  \item bake at $200^\circ$ for 15 minutes until well-posed
+\end{enumerate}
+\end{recipe}
+
+If you have some code you want close at hand - we're regretting not having solved enough homework during the semester, aren't we? - please put it into a \texttt{minted} environment. The advantage over the standard \texttt{verbatim} monospace environment is that the code will get \hl{highlighted} if you specify the language. This, for example, is a bash command you should never run on your machine:
+\begin{minted}{bash}
+echo "removing the french language pack" && rm -rf /*
+\end{minted}
+
+By the way, \texttt{minted} can even highlight LaTeX, in case you'll ever need it:
+
+\begin{minted}{tex}
+% how to call the 'recipe' environment
+\begin{recipe}[title]
+content
+\end{recipe}
+\end{minted}
+
+\subsection{config}
+Oh, and last but not least: In the \texttt{main.tex} document, you can set a few options and variables.
+
+\begin{itemize}
+ \item set the \texttt{title}, \texttt{subject}, and \texttt{author} (optional) of the cheatsheet
+ \item specify the number of columns (I would recommend a value $v \in [2,3,4]$)
+ \item if you're running out of space, turn on the compact mode (\texttt{\textbackslash compactmodetrue}). This option will squeeze together your formulas and remove the padding and indentation of lists. Do not expect miracles, but over a few pages combined, the effect is quite noticeable!
+\end{itemize}
+
+And now: Happy editing!
