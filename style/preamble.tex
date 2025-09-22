@@ -3,11 +3,19 @@
 % encoding and core math
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amsthm,amsfonts,amssymb,mathtools}
+#TODO: is lmodern needed?
+\usepackage{lmodern}
+
+\usepackage{mathtools} % loads amsmath too
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb} % For common math symbols
 
 % tables, colors, graphics, listings
+# TODO: is booktabs really needed?
+\usepackage{booktabs} % For better looking tables (e.g., \toprule, \midrule, \bottomrule)
 \usepackage{graphicx,overpic}
-\usepackage{color,xcolor}
+\usepackage[dvipsnames]{color,xcolor}
 \usepackage{multicol,multirow}
 \usepackage{enumitem}
 \usepackage{minted}
@@ -18,12 +26,19 @@
 \usepackage{mdframed}
 \usepackage[ruled,linesnumbered]{algorithm2e}
 \usepackage{mathrsfs}
+\usepackage{soul} % for the command \hl
 
 % spacing and logic
 \usepackage{calc}
 \usepackage{ifthen}
 \usepackage{geometry}
 \geometry{top=1.2cm, left=1cm, right=1cm, bottom=0.8cm, headsep=10pt}
+#TODO: what is this doing?
+\setlength{\jot}{1pt}
+
+% boxes
+#TODO: why only here? Why comment out in the other file?
+\usepackage[most]{tcolorbox}
 
 % hyperlinks
 \usepackage{hyperref}

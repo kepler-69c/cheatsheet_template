@@ -1,5 +1,11 @@
 %% style/layout.tex %%
 
+#TODO: add option to disable
+% remove itemize/enumerate margin, make vertical space shorter
+% \setlist[itemize]{left=0pt, labelsep=0.5em}
+\setlist[enumerate]{leftmargin=*, itemsep=0em} % 0pt is also possible
+\setlist[itemize]{leftmargin=*, itemsep=0em}
+
 % fonts
 \usepackage[sfdefault]{FiraSans}
 \usepackage{mathpazo}
@@ -7,7 +13,7 @@
 
 % titles and spacing
 \usepackage[explicit]{titlesec}
-\usepackage[many]{tcolorbox}
+%\usepackage[many]{tcolorbox}
 
 % section titles
 \titleformat{\section}[display]
@@ -32,5 +38,51 @@
 \usepackage{lastpage}
 \pagestyle{fancy}
 \fancyhf{}
+#TODO: don't print author if empty
 \lhead{\textbf{\subject} - \semester - \textbf{\author}}
 \rhead{page \thepage /\pageref*{LastPage}}
+
+% for colors:
+% see https://en.wikibooks.org/wiki/LaTeX/Colors#The_68_standard_colors_known_to_dvips
+
+\NewDocumentEnvironment{recipe}{o}
+{
+  \begin{tcolorbox}[
+    colback=white,
+    colframe=YellowGreen!75!black,
+    boxsep=2pt,
+    left=2pt,
+    right=2pt,
+    top=2pt,
+    bottom=2pt,
+    sharp corners,
+    title={\includegraphics[height=5pt]{img/icons/cooking-pot.png}\hspace{4pt}#1}
+  ]
+}
+{
+  \end{tcolorbox}
+}
+
+\newcommand{\warning}[1]{
+  \begin{tcolorbox}[
+    enhanced,
+    colframe=YellowOrange!75!black,
+    colbacktitle=YellowOrange!75!black,
+    titlerule=0pt,
+    attach boxed title to top,
+    sharp corners,
+    boxed title style={sharp corners},
+    frame hidden=true,
+    interior hidden=false,
+    lowerbox=ignored,
+    top=-\baselineskip,
+    title={#1},
+    before upper=\tcblower,
+    left=2pt,
+    toprule=0pt,
+    bottomrule=0pt
+  ]
+  \end{tcolorbox}
+}
+
+
