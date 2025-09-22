@@ -1,43 +1,46 @@
 %% style/preamble.tex %%
 
-% encoding and core math
+% encoding and fonts
 \usepackage[utf8]{inputenc} % utf-8 input
-\usepackage[T1]{fontenc} % better output font encoding
-\usepackage{lmodern} % scalable Latin Modern font
+\usepackage[T1]{fontenc}    % better output font encoding
+\usepackage{lmodern}        % scalable Latin Modern font
 
-\usepackage{mathtools} % loads amsmath too
+% math
+\usepackage{mathtools} % loads amsmath
 \usepackage{amsthm}
 \usepackage{amsfonts}
-\usepackage{amssymb} % For common math symbols
+\usepackage{amssymb}   % common math symbols
+\usepackage{mathrsfs}  % script fonts
 
-% tables, colors, graphics, listings
-\usepackage{booktabs} % to use e.g., \toprule, \midrule, \bottomrule in tables
+% tables, colors, graphics
 \usepackage{graphicx,overpic}
-\usepackage[dvipsnames]{color,xcolor}
-\usepackage{multicol,multirow}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs}    % nicer tables
+\usepackage{multirow,multicol}
+\usepackage{supertabular,xltabular,makecell}
+
+% lists
 \usepackage{enumitem}
+
+% code and highlighting
 \usepackage{minted}
-\usepackage{csquotes}
-\usepackage{supertabular}
-\usepackage{xltabular}
-\usepackage{makecell}
-\usepackage{mdframed}
-\usepackage[ruled,linesnumbered]{algorithm2e}
-\usepackage{mathrsfs}
-\usepackage{soul} % for the command \hl
+\usepackage{soul}        % highlighting (\hl)
+\usepackage{csquotes}    % quotation support
 
-% spacing and logic
-\usepackage{calc}
-\usepackage{ifthen}
-\usepackage{geometry}
-\geometry{top=1.2cm, left=1cm, right=1cm, bottom=0.8cm, headsep=10pt}
-
-% boxes
-% #TODO: why only here? Why comment out in the other file?
+% framed boxes and algorithms
 \usepackage[most]{tcolorbox}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+% spacing and geometry
+\usepackage{calc,ifthen}
+\usepackage{geometry}
+\geometry{top=1.2cm,left=1cm,right=1cm,bottom=0.8cm,headsep=10pt}
 
 % hyperlinks
 \usepackage{hyperref}
+
+% theorems
+\newtheorem{example}[section]{Example}
 
 % math operators
 \DeclareMathOperator*{\argmax}{arg\,max}
@@ -52,12 +55,9 @@
 \DeclareMathOperator*{\z}{\mathbf{z}}
 \DeclareMathOperator*{\vv}{\mathbf{v}}
 
-\newcommand{\eqqcolon}{\mathrel{\rotatebox[units=360]{180}{\ensuremath{\coloneqq}}}}
+\newcommand{\eqqcolon}{\mathrel{\rotatebox[origin=c]{180}{$\coloneqq$}}}
 
-% theorems
-\newtheorem{example}[section]{Example}
-
-% document spacing
+% spacing
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt plus 0.5ex}
 \setlength{\premulticols}{1pt}
@@ -65,5 +65,5 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
-% no section numbering
+% section numbering off
 \setcounter{secnumdepth}{0}
